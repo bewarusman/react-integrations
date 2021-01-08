@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-const $ = window.jQuery;
+import $ from "jquery";
+$.select2 = require("select2");
 
 export default class Select2 extends Component {
   componentDidMount() {
@@ -9,6 +10,11 @@ export default class Select2 extends Component {
     });
     this.handleChange = this.handleChange.bind(this);
     this.$el.on("change", this.handleChange);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.children !== prevProps) {
+    }
   }
 
   componentWillUnmount() {
